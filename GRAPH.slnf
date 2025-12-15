@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "MusicalInstrumentLocator.slnx",
+    "projects": [
+      "MusicalInstrumentLocator\\MusicalInstrumentLocator.csproj"
+    ]
+  }
+}
