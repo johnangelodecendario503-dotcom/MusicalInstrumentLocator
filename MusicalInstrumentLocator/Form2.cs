@@ -41,13 +41,15 @@ namespace MusicalInstrumentLocator
             Graph.UserLocation = txtUserLocation.Text;
 
 
-            
+
 
 
             Graph.InstrumentsToBuy = txtInstrumentBuy.Text
-                .Split(',')
-                .Select(x => x.Trim())
-                .ToList();
+           .Split(',')
+           .Select(x => x.Trim().ToLower())
+           .Take(4) // max 4 instruments
+           .ToList();
+
 
             Graph.UserLocation = txtUserLocation.Text.Trim();
             Graph.UserPosition = Graph.GetPositionFromLocation(Graph.UserLocation);

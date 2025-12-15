@@ -73,6 +73,26 @@ namespace MusicalInstrumentLocator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Dec_16__2025__03_51_37_AM {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Dec 16, 2025, 03_51_37 AM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Dec_16__2025__03_51_37_AM1 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Dec 16, 2025, 03_51_37 AM1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap final_map {
             get {
                 object obj = ResourceManager.GetObject("final map", resourceCulture);

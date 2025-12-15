@@ -42,31 +42,31 @@
             // txtUserName
             // 
             txtUserName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtUserName.Location = new Point(114, 58);
+            txtUserName.Location = new Point(232, 58);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(118, 29);
+            txtUserName.Size = new Size(263, 29);
             txtUserName.TabIndex = 0;
             // 
             // txtUserLocation
             // 
             txtUserLocation.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtUserLocation.Location = new Point(114, 103);
+            txtUserLocation.Location = new Point(232, 100);
             txtUserLocation.Name = "txtUserLocation";
-            txtUserLocation.Size = new Size(118, 29);
+            txtUserLocation.Size = new Size(263, 29);
             txtUserLocation.TabIndex = 1;
             // 
             // txtInstrumentBuy
             // 
             txtInstrumentBuy.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtInstrumentBuy.Location = new Point(33, 213);
+            txtInstrumentBuy.Location = new Point(99, 258);
             txtInstrumentBuy.Name = "txtInstrumentBuy";
-            txtInstrumentBuy.Size = new Size(138, 27);
+            txtInstrumentBuy.Size = new Size(188, 27);
             txtInstrumentBuy.TabIndex = 2;
             // 
             // btnShow
             // 
             btnShow.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnShow.Location = new Point(193, 455);
+            btnShow.Location = new Point(411, 430);
             btnShow.Name = "btnShow";
             btnShow.Size = new Size(84, 23);
             btnShow.TabIndex = 3;
@@ -77,46 +77,46 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(192, 255, 255);
-            label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Font = new Font("Monospac821 BT", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.BackColor = Color.Transparent;
+            label3.BorderStyle = BorderStyle.Fixed3D;
+            label3.Font = new Font("Monospac821 BT", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlText;
-            label3.Location = new Point(33, 161);
+            label3.Location = new Point(49, 188);
             label3.Name = "label3";
-            label3.Size = new Size(242, 21);
+            label3.Size = new Size(317, 27);
             label3.TabIndex = 9;
             label3.Text = "Instrument to buy 🎻🎷🎵";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.Silver;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(33, 195);
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(99, 235);
             label4.Name = "label4";
-            label4.Size = new Size(43, 15);
+            label4.Size = new Size(156, 20);
             label4.TabIndex = 10;
-            label4.Text = "Name:";
+            label4.Text = "Name of instrument:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(255, 255, 192);
+            label1.BackColor = Color.LightSkyBlue;
             label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(44, 62);
+            label1.Location = new Point(66, 62);
             label1.Name = "label1";
-            label1.Size = new Size(64, 22);
+            label1.Size = new Size(160, 22);
             label1.TabIndex = 11;
-            label1.Text = "NAME: ";
+            label1.Text = "ENTER YOUR NAME: ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(255, 255, 192);
+            label2.BackColor = Color.LightSkyBlue;
             label2.BorderStyle = BorderStyle.Fixed3D;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(18, 107);
+            label2.Location = new Point(136, 104);
             label2.Name = "label2";
             label2.Size = new Size(90, 22);
             label2.TabIndex = 12;
@@ -125,7 +125,7 @@
             // btnBack
             // 
             btnBack.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBack.Location = new Point(71, 455);
+            btnBack.Location = new Point(129, 430);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(81, 23);
             btnBack.TabIndex = 13;
@@ -137,8 +137,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources._980a951108dc41233b9ba54a4ef528a3;
-            ClientSize = new Size(356, 540);
+            BackgroundImage = Properties.Resources.ChatGPT_Image_Dec_16__2025__03_51_37_AM1;
+            ClientSize = new Size(639, 502);
             Controls.Add(btnBack);
             Controls.Add(label2);
             Controls.Add(label1);

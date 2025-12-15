@@ -187,6 +187,7 @@ namespace MusicalInstrumentLocator
                     }
                 }
 
+
                 // 2️⃣ CHECK IF STORE HAS WANTED INSTRUMENT
                 bool hasWantedInstrument = store.Instruments.Any(inst =>
                     Graph.InstrumentsToBuy.Any(w =>
@@ -202,10 +203,8 @@ namespace MusicalInstrumentLocator
                         e.Graphics.DrawLine(routePen, userPosition, store.Position);
                     }
                     // DISTANCE
-                    double distance = Math.Sqrt(
-                        Math.Pow(store.Position.X - userPosition.X, 2) +
-                        Math.Pow(store.Position.Y - userPosition.Y, 2)
-                    );
+                    double distance = Graph.GetDistance(store.Position, Graph.UserPosition);
+
 
                     Point mid = new Point(
                         (userPosition.X + store.Position.X) / 2,
@@ -219,10 +218,13 @@ namespace MusicalInstrumentLocator
                     pnlMap.Invalidate();
 
 
+
                 }
 
             }
         }
+
+
 
         private void btnSummary_Click_1(object sender, EventArgs e)
         {
@@ -236,6 +238,11 @@ namespace MusicalInstrumentLocator
             Form2 f2 = new Form2();
             f2.Show();
             this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

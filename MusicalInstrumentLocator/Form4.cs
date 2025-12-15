@@ -18,8 +18,6 @@ namespace MusicalInstrumentLocator
 
         private void Form4_Load(object sender, EventArgs e)
         {
-
-
             lstSummary.Items.Clear();
 
             foreach (var store in Graph.Stores)
@@ -28,43 +26,45 @@ namespace MusicalInstrumentLocator
                 {
                     if (Graph.InstrumentsToBuy.Contains(inst.Name))
                     {
-                        double distance = Math.Abs(store.Location.Length - Graph.UserLocation.Length);
+                        double distance = Graph.GetDistance(store.Position, Graph.UserPosition);
 
                         lstSummary.Items.Add(
-                            $"{store.StoreName} | {inst.Name} | Distance: {distance:0.} | Price: {inst.Price}"
-
-
+                            $"{store.StoreName} | {inst.Name} | Distance: {distance:0.0} | Price: {inst.Price:0.00}"
                         );
                     }
                 }
             }
         }
 
+
+
         private void btnBest_Click(object sender, EventArgs e)
         {
-            // No stores at all
             if (Graph.Stores.Count == 0)
                 return;
 
-            // Try normal logic
             var best = Graph.GetBestStore();
 
-            // 🔴 FORCE FALLBACK
             if (best == null)
-            {
-                best = Graph.Stores[0]; // TAKE FIRST STORE
-            }
+                best = Graph.Stores[0];
 
-            MessageBox.Show(
-                $"BEST STORE\n\n" +
-                $"Store: {best.StoreName}\n" +
-                $"Instrument: {best.Instrument}\n" +
-                $"Price: ₱{best.Price:0.00}",
-                "Best Store",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            var instrument = best.Instruments
+                .FirstOrDefault(i => Graph.InstrumentsToBuy.Contains(i.Name.ToLower()));
+
+            if (instrument != null)
+            {
+                MessageBox.Show(
+                    $"BEST STORE\n\n" +
+                    $"Store: {best.StoreName}\n" +
+                    $"Instrument: {instrument.Name}\n" +
+                    $"Price: ₱{instrument.Price:0.00}",
+                    "Best Store",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
         }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

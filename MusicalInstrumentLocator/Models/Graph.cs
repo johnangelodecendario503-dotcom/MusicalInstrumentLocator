@@ -41,15 +41,17 @@ namespace MusicalInstrumentLocator.Models
 
             foreach (var store in Stores)
             {
-                if (!InstrumentsToBuy.Any(b =>
-    store.Instrument.ToLower().Contains(b.ToLower())))
+                // Find the first instrument in this store that matches user's request
+                var matchingInstrument = store.Instruments
+                    .FirstOrDefault(i => InstrumentsToBuy.Contains(i.Name.ToLower()));
+
+                if (matchingInstrument == null)
                     continue;
 
-                double dx = store.Position.X - UserPosition.X;
-                double dy = store.Position.Y - UserPosition.Y;
-                double distance = Math.Sqrt(dx * dx + dy * dy);
+                double distance = GetDistance(store.Position, UserPosition);
 
-                double score = distance + (store.Price * 0.5);
+                // Score = distance + 50% of instrument price (you can adjust weight)
+                double score = distance + (matchingInstrument.Price * 0.5);
 
                 if (score < bestScore)
                 {

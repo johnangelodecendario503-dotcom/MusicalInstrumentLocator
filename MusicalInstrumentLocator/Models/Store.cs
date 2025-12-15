@@ -9,13 +9,11 @@ namespace MusicalInstrumentLocator.Models
         public string Location { get; set; }
         public List<Instrument> Instruments { get; set; } = new();
 
-        public string Instrument { get; set; } = "";
-        public double Price { get; set; }
-
         // MAP COORDINATES
         public Point Position { get; set; }
         public Color StoreColor { get; set; }
     }
 }
+
 
 

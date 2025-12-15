@@ -14,87 +14,55 @@ namespace MusicalInstrumentLocator
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
+            // Get instruments and prices
+            string[] instruments = txtInstrument.Text.Split(',');
+            string[] prices = txtPrice.Text.Split(',');
 
-            if (!double.TryParse(txtPrice.Text, out double price))
+            if (instruments.Length != prices.Length || instruments.Length > 4)
             {
-                MessageBox.Show(
-                    "Invalid price. Please enter a number.",
-                    "Invalid Input",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-
-                );
-                txtPrice.Focus();
+                MessageBox.Show("Enter max 4 instruments and matching prices.");
                 return;
             }
-
 
             Store store = new Store
             {
                 StoreName = txtStoreName.Text.Trim(),
                 Location = txtStoreLocation.Text.Trim(),
-                Instrument = txtInstrument.Text.Trim().ToLower(),
-                Price = price,
-
-                //  VERY IMPORTANT
                 Position = Graph.GetPositionFromLocation(txtStoreLocation.Text)
             };
+
+            // Optional: assign random color
             Random rnd = new Random();
-
-            Color[] colors =
-            {
-            Color.Red,
-            Color.Blue,
-            Color.Green,
-            Color.Orange,
-            Color.Purple,
-            Color.Brown,
-            Color.DarkCyan
-            };
-
+            Color[] colors = { Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Purple, Color.Brown, Color.DarkCyan };
             store.StoreColor = colors[rnd.Next(colors.Length)];
 
-            Instrument instrument = new Instrument
+            // Add instruments
+            for (int i = 0; i < instruments.Length; i++)
             {
-                Name = txtInstrument.Text,
+                if (!double.TryParse(prices[i], out double price))
+                {
+                    MessageBox.Show($"Invalid price for {instruments[i]}");
+                    return;
+                }
 
-                Price = price
+                store.Instruments.Add(new Instrument
+                {
+                    Name = instruments[i].Trim().ToLower(),
+                    Price = price
+                });
+            }
 
-
-            };
-
-            store.Instruments.Add(instrument);
             Graph.Stores.Add(store);
 
-            MessageBox.Show(" Successfully Added :) ");
+            MessageBox.Show("Store added successfully!");
 
-            // RESET TEXTBOXES
+            // Clear inputs
             txtStoreName.Clear();
             txtStoreLocation.Clear();
             txtInstrument.Clear();
             txtPrice.Clear();
-
-            Random rand = new Random();
-            const int MAP_MARGIN = 20;
-
-
-            int x = rnd.Next(
-                MAP_MARGIN,
-                 Graph.MapWidth - MAP_MARGIN
-            );
-
-            int y = rnd.Next(
-                MAP_MARGIN,
-                Graph.MapWidth - MAP_MARGIN
-            );
-
-            store.Position = new Point(x, y);
-
-            store.Instrument = txtInstrument.Text.Trim();
-            store.Price = price;
-
-
         }
+
 
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -115,10 +83,25 @@ namespace MusicalInstrumentLocator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-                
+
         }
 
         private void txtInstrument_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStoreName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStoreLocation_TextChanged(object sender, EventArgs e)
         {
 
         }
